@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Quoted printable decoder
+
+  form(action="/", method="post")
+    label Quoted-printable encoded text:
+    textarea(name="encoded")= locals.encoded ? encoded : ""
+    button(type="submit") Decode
+
+
+  if locals.decoded
+    pre.decoded= decoded
